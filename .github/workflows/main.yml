@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, echan044/discussion25 ]
   pull_request:
     branches: [ main ]
     
@@ -21,7 +21,7 @@ jobs:
         submodules: recursive
 
     # Here is how you run terminal commands using GitHub workflows
-    - name: output some text to the terminal using echo
+    - name: terminal echo
       run: echo I just ran the echo command in the terminal
 
     # Compile and run the Hello World program
