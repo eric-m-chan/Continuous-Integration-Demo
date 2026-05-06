@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main, echan044/discussion25 ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, temp ]
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,11 +21,12 @@ jobs:
         submodules: recursive
 
     # Here is how you run terminal commands using GitHub workflows
-    - name: output some text to the terminal using echo
+    - name: terminal echo
       run: echo I just ran the echo command in the terminal
 
     # Compile and run the Hello World program
     - name: Hello World
       run: |
-       g++ HelloWorld.cpp -o HelloWorld
+       cmake .
+       make
        ./HelloWorld
